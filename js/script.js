@@ -11,7 +11,13 @@ createApp ({
 
     methods: {
         getDiscFromAPI() {
-            axios.get('server.php')
+            const myParam = {
+                discIndex: this.indexDisc
+            }
+
+            axios.get('server.php', {
+                params: myParam
+            })
             .then((response) => {
                 this.allDisc = response.data;
             })
