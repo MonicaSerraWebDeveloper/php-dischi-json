@@ -18,12 +18,35 @@
 <body>
 
     <div id="app">
-        <ul v-for="disc in allDisc">
-            <li><img :src="disc.poster" alt=""></li>
-            <li>{{ disc.title }}</li>
-            <li>{{ disc.author }}</li>
-            <li>{{ disc.year }}</li>
-        </ul>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-100">
+                        <div class="image-container">
+                            <img src="./img/spotify_logo.png" alt="spotify-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row grid-container">
+                    <div class="col-33 grid" v-for="disc, indexDisc in allDisc">
+                        <div class="image-disc-container">
+                            <img :src="disc.poster" alt="">
+                        </div>
+                        <div class="info-disc-container">
+                            <h2>{{ disc.title }}</h2>
+                            <h4>{{ disc.author }}</h4>
+                            <div class="year-text">{{ disc.year }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        
     </div>
     <script src="js/script.js"></script>
 </body>

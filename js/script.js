@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp ({
     data() {
        return {
-           allDisc: []
+           allDisc: [],
        }
     },
 
@@ -12,6 +12,7 @@ createApp ({
             axios.get('server.php')
             .then((response) => {
                 this.allDisc = response.data;
+                console.log(response.data);
             })
         }
     },
