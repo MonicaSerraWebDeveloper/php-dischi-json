@@ -18,7 +18,12 @@
 <body>
 
     <div id="app">
-        <h2>ciaooo</h2>
+        <ul v-for="disc in allDisc">
+            <li><img :src="disc.poster" alt=""></li>
+            <li>{{ disc.title }}</li>
+            <li>{{ disc.author }}</li>
+            <li>{{ disc.year }}</li>
+        </ul>
     </div>
     <script src="js/script.js"></script>
 </body>
