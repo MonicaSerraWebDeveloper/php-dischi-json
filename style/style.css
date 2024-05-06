@@ -15,6 +15,7 @@ img {
 body {
     background-color: #1d2d3c;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
 }
 
 li {
@@ -48,6 +49,12 @@ h4 {
 
 header {
     background-color: #06131f;
+}
+
+.container-large {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .container {
@@ -98,6 +105,7 @@ header {
     padding: 20px 50px;
     background-color: #112030;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .info-disc-container {
@@ -105,4 +113,57 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+
+/*--------------------
+        POP-UP
+----------------------*/
+
+.pop-up-container {
+    width: 100%; 
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    opacity: 0;
+    transform: scale(0.8); 
+    transition: opacity 2s ease, transform 2s ease; 
+}
+
+.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.row-pop-up {
+    background-color: #06131f95;
+    margin: 20px;
+    border-radius: 6px;
+    height: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.grid-pop-up {
+    color: #fff;
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.esc-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 6px 10px;
 }

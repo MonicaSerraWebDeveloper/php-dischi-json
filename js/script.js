@@ -4,16 +4,27 @@ createApp ({
     data() {
        return {
            allDisc: [],
+           indexDisc: 0,
+           showPopUp: false,
        }
     },
 
     methods: {
-        getDiscFromAPI () {
+        getDiscFromAPI() {
             axios.get('server.php')
             .then((response) => {
                 this.allDisc = response.data;
-                console.log(response.data);
             })
+        },
+
+        getSingleDisc(index) {
+            this.indexDisc = index
+            if (!this.showPopUp) {
+                this.showPopUp = true
+            } else {
+                this.showPopUp = false
+            }
+            
         }
     },
 

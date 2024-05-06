@@ -19,7 +19,7 @@
 
     <div id="app">
         <header>
-            <div class="container">
+            <div class="container-large">
                 <div class="row">
                     <div class="col-100">
                         <div class="image-container">
@@ -32,19 +32,55 @@
         <main>
             <div class="container">
                 <div class="row grid-container">
-                    <div class="col-33 grid" v-for="disc, indexDisc in allDisc">
+                    <template v-for="disc, index in allDisc">
+                        <div 
+                        class="col-33 grid" 
+                        @click="getSingleDisc(index)"
+                        >
+                            <div class="image-disc-container">
+                                <img :src="disc.poster" alt="">
+                            </div>
+                            <div class="info-disc-container">
+                                <h2>{{ disc.title }}</h2>
+                                <h4>{{ disc.author }}</h4>
+                                <div class="year-text">{{ disc.year }}</div>
+                            </div>
+                        </div>
+                        <div class="pop-up-container" :class="{'active': showPopUp}" v-if="index === indexDisc && showPopUp">
+                            <div class="row-pop-up">
+                                <div class="col-33 grid-pop-up" >
+                                    <div class="image-disc-container">
+                                        <img :src="disc.poster" alt="">
+                                    </div>
+                                    <div class="info-disc-container">
+                                        <h2>{{ disc.title }}</h2>
+                                        <h4>{{ disc.author }}</h4>
+                                        <div class="year-text">{{ disc.year }}</div>
+                                    </div>
+                                </div>
+                                <button 
+                                @click="getSingleDisc(index)"
+                                :class="{'active': !showPopUp }" class="esc-button">X</button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <!-- <div class="pop-up-container">
+                <div class="row-pop-up">
+                    <div class="col-33 grid-pop-up">
                         <div class="image-disc-container">
-                            <img :src="disc.poster" alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="info-disc-container">
                             <h2>{{ disc.title }}</h2>
-                            <h4>{{ disc.author }}</h4>
-                            <div class="year-text">{{ disc.year }}</div>
+                            <h4>author</h4>
+                            <div class="year-text">year</div>
                         </div>
                     </div>
+                    <button class="esc-button">X</button>
                 </div>
-            </div>
-            
+            </div> -->
         </main>
         
     </div>
