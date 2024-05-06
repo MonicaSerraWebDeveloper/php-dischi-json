@@ -46,7 +46,7 @@
                                 <div class="year-text">{{ disc.year }}</div>
                             </div>
                         </div>
-                        <div class="pop-up-container" :class="{'active': showPopUp}" v-if="index === indexDisc && showPopUp">
+                        <div class="pop-up-container" :class="{'active': showPopUp}" v-if="index === indexFlag && showPopUp">
                             <div class="row-pop-up">
                                 <div class="col-33 grid-pop-up" >
                                     <div class="image-disc-container">
@@ -66,21 +66,6 @@
                     </template>
                 </div>
             </div>
-            <!-- <div class="pop-up-container">
-                <div class="row-pop-up">
-                    <div class="col-33 grid-pop-up">
-                        <div class="image-disc-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="info-disc-container">
-                            <h2>{{ disc.title }}</h2>
-                            <h4>author</h4>
-                            <div class="year-text">year</div>
-                        </div>
-                    </div>
-                    <button class="esc-button">X</button>
-                </div>
-            </div> -->
         </main>
         
     </div>

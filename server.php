@@ -10,11 +10,11 @@ $response = $discs;
 if(isset($_GET['discIndex'])) {
     $discIndex = intval($_GET['discIndex']);
     $response = $discs[$discIndex];
-}
+};
 
-if(empty($_GET['discIndex'])) {
-    $response = $discs;
-}
+// if(empty($_GET['discIndex'])) {
+//     $response = $discs;
+// }
 // La funzione header() ci permette di far leggere correttamente i dati a Javascript e quindi specifichiamo che le informazioni restituite sono di tipo JSON
 header ('Content-Type: application/json');
 
