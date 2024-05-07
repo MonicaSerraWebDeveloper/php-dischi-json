@@ -35,7 +35,7 @@
                     <template v-for="disc, index in allDisc">
                         <div 
                         class="col-33 grid" 
-                        @click="getSingleDisc(index)"
+                        @click="getSingleDiscFromAPI(index)"
                         >
                             <div class="image-disc-container">
                                 <img :src="disc.poster" alt="">
@@ -46,24 +46,24 @@
                                 <div class="year-text">{{ disc.year }}</div>
                             </div>
                         </div>
-                        <div class="pop-up-container" :class="{'active': showPopUp}" v-if="index === indexFlag && showPopUp">
-                            <div class="row-pop-up">
-                                <div class="col-33 grid-pop-up" >
-                                    <div class="image-disc-container">
-                                        <img :src="disc.poster" alt="">
-                                    </div>
-                                    <div class="info-disc-container">
-                                        <h2>{{ disc.title }}</h2>
-                                        <h4>{{ disc.author }}</h4>
-                                        <div class="year-text">{{ disc.year }}</div>
-                                    </div>
-                                </div>
-                                <button 
-                                @click="getSingleDisc(index)"
-                                :class="{'active': !showPopUp }" class="esc-button">X</button>
-                            </div>
-                        </div>
                     </template>
+                </div>
+            </div>
+            <div class="pop-up-container" :class="{'active': showPopUp}" v-if="singleDisc">
+                <div class="row-pop-up">
+                    <div class="col-33 grid-pop-up" >
+                        <div class="image-disc-container">
+                            <img :src="singleDisc.poster" alt="">
+                        </div>
+                        <div class="info-disc-container">
+                            <h2>{{ singleDisc.title }}</h2>
+                            <h4>{{ singleDisc.author }}</h4>
+                            <div class="year-text">{{ singleDisc.year }}</div>
+                        </div>
+                    </div>
+                    <button 
+                    @click="getSingleDiscFromAPI(index)"
+                    :class="{'active': !showPopUp }" class="esc-button">X</button>
                 </div>
             </div>
         </main>
